@@ -1,0 +1,11 @@
+The files located in this directory are the settings used to run PSCAFEPOS.
+
++ The active file is always named "settings.dbp"
+
++ The templace file that is used when no "settings.dbp" exists is "settings.dbp.firstrun"
+
++ The other files are template files for tested SIS Systems.
+	Note: These are not completely configured, they will need information
+              such as IP address, etc.  First, rename the file you would like
+              to use to "settings.dbp" and execute the "PSCAFEPOS.bat --config"
+	      This forces the configuration wizard to load.

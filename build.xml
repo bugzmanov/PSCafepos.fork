@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="pscafe" default="all">
+  
+  <property name="compiler.debug" value="on"/>
+  <property name="compiler.generate.no.warnings" value="off"/>
+  <property name="compiler.args" value=""/>
+  <property name="compiler.max.memory" value="128m"/>
+  <patternset id="ignored.files">
+    <exclude name="**/.svn/**"/>
+  </patternset>
+  <patternset id="library.patterns">
+    <include name="*.zip"/>
+    <include name="*.war"/>
+    <include name="*.egg"/>
+    <include name="*.ear"/>
+    <include name="*.swc"/>
+    <include name="*.jar"/>
+  </patternset>
+  <patternset id="compiler.resources">
+    <include name="etc/?*.*"/>
+    <include name="**/?*.jar"/>
+    <include name="**/?*.dll"/>
+    <include name="**/?*.properties"/>
+    <include name="**/?*.bat"/>
+    <include name="**/?*.sh"/>
+    <include name="**/?*.xml"/>
+    <include name="**/?*.gif"/>
+    <include name="**/?*.png"/>
+    <include name="**/?*.jpeg"/>
+    <include name="**/?*.jpg"/>
+    <include name="**/?*.html"/>
+    <include name="**/?*.dtd"/>
+    <include name="**/?*.tld"/>
+    <include name="**/?*.ftl"/>
+  </patternset>
+  <!-- Project Libraries -->
+  
+  <path id="library.lib.classpath">
+    <pathelement location="${basedir}/lib/APGJposService171.jar"/>
+    <pathelement location="${basedir}/lib/Jpos17.jar"/>
+    <pathelement location="${basedir}/lib/derby.jar"/>
+    <pathelement location="${basedir}/lib/jcl_editor.jar"/>
+    <pathelement location="${basedir}/lib/jconn3.jar"/>
+    <pathelement location="${basedir}/lib/mysql-connector-java-5.1.8-bin.jar"/>
+    <pathelement location="${basedir}/lib/postgresql-8.2-505.jdbc3.jar"/>
+    <pathelement location="${basedir}/lib/xerces.jar"/>
+    <pathelement location="${basedir}/lib/commons-dbcp-1.2.2.jar"/>
+    <pathelement location="${basedir}/lib/commons-pool-1.5.3.jar"/>
+  </path>
+  
+  <!-- Modules -->
+  
+  
+  <!-- Module PSCafePOS -->
+  
+  <dirname property="module.pscafepos.basedir" file="${ant.file}"/>
+  
+  <property name="compiler.args.pscafepos" value="${compiler.args}"/>
+  
+  <property name="pscafepos.output.dir" value="${module.pscafepos.basedir}/out/production/PSCafePOS"/>
+  <property name="pscafepos.testoutput.dir" value="${module.pscafepos.basedir}/out/test/PSCafePOS"/>
+  
+  <path id="pscafepos.module.bootclasspath">
+    <!-- Paths to be included in compilation bootclasspath -->
+  </path>
+  
+  <path id="pscafepos.module.classpath">
+    <path refid="library.lib.classpath"/>
+  </path>
+  
+  <path id="pscafepos.runtime.module.classpath">
+    <pathelement location="${pscafepos.output.dir}"/>
+    <pathelement location="${pscafepos.testoutput.dir}"/>
+    <path refid="library.lib.classpath"/>
+  </path>
+  
+  
+  <patternset id="excluded.from.module.pscafepos">
+    <patternset refid="ignored.files"/>
+    <exclude name="out/**"/>
+  </patternset>
+  
+  <patternset id="excluded.from.compilation.pscafepos">
+    <patternset refid="excluded.from.module.pscafepos"/>
+  </patternset>
+  
+  <path id="pscafepos.module.sourcepath">
+    <!--dirset dir="${module.pscafepos.basedir}/../../PSCafePOS"-->
+    <dirset dir="${module.pscafepos.basedir}">
+      <!--include name="src"/-->
+    </dirset>
+  </path>
+  
+  
+  <target name="compile.module.pscafepos" depends="compile.module.pscafepos.production,compile.module.pscafepos.tests" description="Compile module PSCafePOS"/>
+  
+  <target name="compile.module.pscafepos.production" description="Compile module PSCafePOS; production classes">
+    <mkdir dir="${pscafepos.output.dir}"/>
+    <javac destdir="${pscafepos.output.dir}" debug="${compiler.debug}" nowarn="${compiler.generate.no.warnings}" memorymaximumsize="${compiler.max.memory}" fork="true">
+      <compilerarg line="${compiler.args.pscafepos}"/>
+      <bootclasspath refid="pscafepos.module.bootclasspath"/>
+      <classpath refid="pscafepos.module.classpath"/>
+      <src refid="pscafepos.module.sourcepath"/>
+      <patternset refid="excluded.from.compilation.pscafepos"/>
+    </javac>
+    
+    <copy todir="${pscafepos.output.dir}">
+      <fileset dir="${module.pscafepos.basedir}">
+        <patternset refid="compiler.resources"/>
+        <type type="file"/>
+      </fileset>
+    </copy>
+  </target>
+  
+  <target name="compile.module.pscafepos.tests" depends="compile.module.pscafepos.production" description="compile module PSCafePOS; test classes" unless="skip.tests"/>
+  
+  <target name="clean.module.pscafepos" description="cleanup module">
+    <delete dir="${pscafepos.output.dir}"/>
+    <delete dir="${pscafepos.testoutput.dir}"/>
+  </target>
+  
+  <target name="init" description="Build initialization">
+    <!-- Perform any build initialization in this target -->
+  </target>
+  
+  <target name="clean" depends="clean.module.pscafepos" description="cleanup all"/>
+  
+  <target name="all" depends="init, clean, compile.module.pscafepos" description="build all"/>
+</project>

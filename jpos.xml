@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE JposEntries PUBLIC "-//JavaPOS//DTD//EN"
+                             "jpos/res/jcl.dtd">
+<JposEntries>
+<!--Saved by JavaPOS jpos.config/loader (JCL) version 2.0.1 on 10/26/04 16:37 PM-->
+   
+     <JposEntry logicalName="CD484">
+        <creation factoryClass="apg.jpos171.org.pscafepos.util.APGJposServiceInstanceFactory" serviceClass="apg.jpos171.cd.CashDrawerService"/>
+        <vendor name="APG Cash Drawer Inc." url="http://www.apgcd.com"/>
+        <jpos category="CashDrawer" version="1.7.1"/>
+        <product description="APG Model 484A SerialPRO(r) II Interface CashDrawer Device Service" name="APG CashDrawer Service for JavaPOS(TM) Standard" url="http://www.apgcd.com"/>
+
+        <!--Other non JavaPOS required property (mostly vendor properties and bus specific properties i.e. RS232 )-->
+        <prop name="PhysicalDevice" type="String" value="CD484"/>
+        <prop name="DeviceID" type="String" value="0"/>
+        <prop name="deviceBus" type="String" value="Unknown"/>
+        <prop name="PortType" type="String" value="0"/>
+        <prop name="PortName" type="String" value="COM1"/>
+        <prop name="BaudRate" type="String" value="5"/>
+        <prop name="DataBitLen" type="String" value="8"/>
+        <prop name="StopBits" type="String" value="1"/>
+        <prop name="Parity" type="String" value="0"/>
+        <prop name="HandShaking" type="String" value="0"/>
+	  <prop name="FirstOC" type="String" value="7"/>
+        <prop name="Status" type="String" value="0"/>
+        <prop name="Timeout" type="String" value="1000"/>
+</JposEntry>
+
+    <JposEntry logicalName="CD212">
+        <creation factoryClass="apg.jpos171.org.pscafepos.util.APGJposServiceInstanceFactory" serviceClass="apg.jpos171.cd.CashDrawerService"/>
+        <vendor name="APG Cash Drawer Inc." url="http://www.apgcd.com"/>
+        <jpos category="CashDrawer" version="1.7.1"/>
+        <product description="APG Model 212A Smart SerialPRO(r) Interface CashDrawer Device Service" name="APG CashDrawer Service for JavaPOS(TM) Standard" url="http://www.apgcd.com"/>
+
+        <!--Other non JavaPOS required property (mostly vendor properties and bus specific properties i.e. RS232 )-->
+        <prop name="PhysicalDevice" type="String" value="CD212"/>
+        <prop name="DeviceID" type="String" value="1"/>
+        <prop name="deviceBus" type="String" value="Unknown"/>
+        <prop name="PortType" type="String" value="0"/>
+        <prop name="PortName" type="String" value="COM1"/>
+        <prop name="DrawerNo" type="String" value="1"/>
+        <prop name="BaudRate" type="String" value="5"/>
+        <prop name="DataBitLen" type="String" value="8"/>
+        <prop name="StopBits" type="String" value="1"/>
+        <prop name="Parity" type="String" value="0"/>
+        <prop name="HandShaking" type="String" value="0"/>       
+	  <prop name="FirstOC" type="String" value="91"/>
+        <prop name="SecondOC" type="String" value="91"/>
+        <prop name="Status" type="String" value="0"/>
+        <prop name="Timeout" type="String" value="1000"/>
+</JposEntry>
+
+
+    <JposEntry logicalName="CD182">
+        <creation factoryClass="apg.jpos171.org.pscafepos.util.APGJposServiceInstanceFactory" serviceClass="apg.jpos171.cd.CashDrawerService"/>
+        <vendor name="APG Cash Drawer Inc." url="http://www.apgcd.com"/>
+        <jpos category="CashDrawer" version="1.7.1"/>
+        <product description="APG Model 182 ParallelPRO(tm) Interface CashDrawer Device Service" name="APG CashDrawer Service for JavaPOS(TM) Standard" url="http://www.apgcd.com"/>
+
+        <!--Other non JavaPOS required property (mostly vendor properties and bus specific properties i.e. RS232 )-->
+        <prop name="PhysicalDevice" type="String" value="CD182"/>
+        <prop name="DeviceID" type="String" value="2"/>
+        <prop name="deviceBus" type="String" value="Unknown"/>
+        <prop name="PortType" type="String" value="1"/>
+        <prop name="PortName" type="String" value="LPT1"/>
+        <prop name="DrawerNo" type="String" value="1"/>
+        <prop name="FirstOC" type="String" value="91"/>
+        <prop name="SecondOC" type="String" value="91"/>
+        <prop name="Status" type="String" value="0"/>
+        <prop name="Timeout" type="String" value="1000"/>
+</JposEntry>
+
+     <JposEntry logicalName="CD554">
+        <creation factoryClass="apg.jpos171.org.pscafepos.util.APGJposServiceInstanceFactory" serviceClass="apg.jpos171.cd.CashDrawerService"/>
+        <vendor name="APG Cash Drawer Inc." url="http://www.apgcd.com"/>
+        <jpos category="CashDrawer" version="1.7.1"/>
+        <product description="APG Model 554 USBPro(tm) Interface CashDrawer Device Service" name="APG CashDrawer Service for JavaPOS(TM) Standard" url="http://www.apgcd.com"/>
+
+        <!--Other non JavaPOS required property (mostly vendor properties and bus specific properties i.e. RS232 )-->
+        <prop name="PhysicalDevice" type="String" value="CD554"/>
+        <prop name="DeviceID" type="String" value="3"/>
+        <prop name="deviceBus" type="String" value="Unknown"/>
+        <prop name="PortType" type="String" value="2"/>
+        <prop name="PortName" type="String" value="USB"/>
+        <prop name="Status" type="String" value="0"/>
+        <prop name="Timeout" type="String" value="1000"/>
+</JposEntry>
+
+     <JposEntry logicalName="CD554-2">
+        <creation factoryClass="apg.jpos171.org.pscafepos.util.APGJposServiceInstanceFactory" serviceClass="apg.jpos171.cd.CashDrawerService"/>
+        <vendor name="APG Cash Drawer Inc." url="http://www.apgcd.com"/>
+        <jpos category="CashDrawer" version="1.7.1"/>
+        <product description="APG Model 554 USBPro(tm) Interface CashDrawer Device Service" name="APG CashDrawer Service for JavaPOS(TM) Standard" url="http://www.apgcd.com"/>
+
+        <!--Other non JavaPOS required property (mostly vendor properties and bus specific properties i.e. RS232 )-->
+        <prop name="PhysicalDevice" type="String" value="CD554-2"/>
+        <prop name="DeviceID" type="String" value="3"/>
+        <prop name="deviceBus" type="String" value="Unknown"/>
+        <prop name="PortType" type="String" value="2"/>
+        <prop name="PortName" type="String" value="USB"/>
+        <prop name="Status" type="String" value="0"/>
+        <prop name="Timeout" type="String" value="1000"/>
+</JposEntry>
+
+   
+</JposEntries>
